@@ -39,7 +39,7 @@ func (c *Console) timeEnd(key string) {
 	fmt.Printf("%s: %v\n", key, elapsed)
 }
 
-func (c *Console) Polyfill(vm *goja.Runtime) error {
+func (c *Console) Inject(vm *goja.Runtime) error {
 	consoleObj := vm.NewObject()
 	if err := consoleObj.Set("log", c.log); err != nil {
 		return err
@@ -75,5 +75,5 @@ func Inject(vm *goja.Runtime) error {
 	console := &Console{
 		timeMap: make(map[string]time.Time),
 	}
-	return console.Polyfill(vm)
+	return console.Inject(vm)
 }
