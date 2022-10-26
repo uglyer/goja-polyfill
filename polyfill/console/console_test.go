@@ -15,6 +15,16 @@ func newVM(t *testing.T) *goja.Runtime {
 
 func TestLog(t *testing.T) {
 	vm := newVM(t)
-	_, err := vm.RunString(`console.log("test","test2",{"test":"ttt"},["1","2",3])`)
+	_, err := vm.RunString(`console.log(1,"test2",{"test":"ttt"},["1","2",3])`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.trace(2,"test2",{"test":"ttt"},["1","2",3])`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.debug(3,"test2",{"test":"ttt"},["1","2",3])`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.info(4,"test2",{"test":"ttt"},["1","2",3])`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.warn(5,"test2",{"test":"ttt"},["1","2",3])`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.error(6,"test2",{"test":"ttt"},["1","2",3])`)
 	assert.NoError(t, err)
 }
