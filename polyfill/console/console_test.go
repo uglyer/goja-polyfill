@@ -4,6 +4,7 @@ import (
 	"github.com/dop251/goja"
 	"github.com/stretchr/testify/assert"
 	"testing"
+	"time"
 )
 
 func newVM(t *testing.T) *goja.Runtime {
@@ -26,5 +27,22 @@ func TestLog(t *testing.T) {
 	_, err = vm.RunString(`console.warn(5,"test2",{"test":"ttt"},["1","2",3])`)
 	assert.NoError(t, err)
 	_, err = vm.RunString(`console.error(6,"test2",{"test":"ttt"},["1","2",3])`)
+	assert.NoError(t, err)
+}
+
+func TestTimer(t *testing.T) {
+	vm := newVM(t)
+	_, err := vm.RunString(`console.time("timer1")`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.time("timer1")`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.time("timer2")`)
+	assert.NoError(t, err)
+	time.Sleep(time.Duration(1) * time.Millisecond)
+	_, err = vm.RunString(`console.timeEnd("timer1")`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.timeEnd("timer1")`)
+	assert.NoError(t, err)
+	_, err = vm.RunString(`console.timeEnd("timer2")`)
 	assert.NoError(t, err)
 }
