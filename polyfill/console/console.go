@@ -41,6 +41,9 @@ func (c *Console) timeEnd(key string) {
 
 func (c *Console) Inject(vm *goja.Runtime) error {
 	consoleObj := vm.NewObject()
+	if err := consoleObj.Set("alert", c.log); err != nil {
+		return err
+	}
 	if err := consoleObj.Set("log", c.log); err != nil {
 		return err
 	}
