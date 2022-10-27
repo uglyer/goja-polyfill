@@ -8,16 +8,15 @@
 
 ### Web Platform APIs
 
-- [alert, confirm, prompt] (1)
-- [Console]
-- [Crypto] (2)
-- [Encoding API]
-- [EventTarget]
-- [fetch]
-- [JSON modules]
-- [Performance]
-- [setTimeout, setInterval]
-- [Streams API]
-- [URL]
-- [URLPattern]
-- [URLSearchParams]
+- [ ] Blob
+- [x] Console, alert
+- [ ] Crypto
+- [ ] Encoding API
+- [ ] EventLoop (setTimeout, setInterval, requestAnimationFrame, queueMicrotask)
+- [ ] EventTarget
+- [ ] fetch
+- [ ] Performance
+- [ ] Streams API
+- [ ] URL
+- [ ] URLPattern
+- [ ] URLSearchParams
