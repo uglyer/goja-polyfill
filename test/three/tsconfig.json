@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": true,
+    "allowUnusedLabels": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": false,
+    "moduleResolution": "node",
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "jsx": "react",
+    "allowJs": true,
+    "preserveConstEnums": true,
+    "composite": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictNullChecks": false,
+    "outDir": "./dist",
+    "declarationDir": "./dist",
+    "lib": [
+      "dom",
+      "scripthost",
+      "es5",
+      "es6",
+      "es7",
+      "dom.iterable",
+      "esnext"
+    ],
+    "typeRoots": [
+    ],
+    "baseUrl": ".",
+    "paths": {}
+  },
+  "include": [
+    "./"
+  ],
+  "exclude": [
+    "./dist"
+  ]
+}
